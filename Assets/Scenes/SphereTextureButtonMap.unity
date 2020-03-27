@@ -335,7 +335,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 92bc5bb461b546942adb3013ec794254, type: 2}
+  - {fileID: 2100000, guid: 14bf13c6803a4734a9b38e732e07b39a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -404,11 +404,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 103557020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f5a616feead01540bb382deda867b4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 28f7ac12c63a7f00ba05416ddd533527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefab: {fileID: 373213900585299712, guid: 4b8b00dcc2b55524389e54edd6c4fa73,
-    type: 3}
+  buttonPrefab: {fileID: 0}
 --- !u!1 &190783552
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -473, y: 301}
+  m_AnchoredPosition: {x: -388, y: 235}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1202252623
@@ -806,7 +805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -298, y: 300}
+  m_AnchoredPosition: {x: -214, y: 234}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1227130521
@@ -849,8 +848,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: fb479621880f37a4c8a0c09243c3431e, type: 3}
-        m_MethodName: set_name
+      - m_Target: {fileID: 1227130519}
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1299,12 +1298,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1781659463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb479621880f37a4c8a0c09243c3431e, type: 3}
+  m_Script: {fileID: 11500000, guid: a72671007dd464dbc91c1a9c8a8f7b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1227130521}
-  textureName: {fileID: 0}
-  sphere: {fileID: 0}
+  textureName: {fileID: 1202252623}
+  sphere: {fileID: 103557020}
 --- !u!1 &2128544884
 GameObject:
   m_ObjectHideFlags: 0
