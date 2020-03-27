@@ -1,0 +1,2 @@
+Dies ist das Skript zum bewegen der Kamera mit der Maus.
+=> linke Maustaste drücken + mausbewegung = kamera bewegung

@@ -1,0 +1,1 @@
+Shader der Sphere, er spiegelt die Textur und zeit sie auf der Sphere an. Wenn keine Textur vorhanden ist ist sie Weiß
