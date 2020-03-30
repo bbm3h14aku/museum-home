@@ -66,7 +66,11 @@ public class SphereButtonEvent : MonoBehaviour
         if (GUI.Button(new Rect(0, 60, 100, 20), "OK") && Resources.Load("360View/Wald/" + stringToEdit))
         {
             activeButtons.Add(newButton);
-            saveManager.addButton(textureName, new ButtonData(stringToEdit, newButton.transform.position));
+            ButtonData bData = new ButtonData();
+            bData.destination = stringToEdit;
+            bData.position = newButton.transform.position;
+            saveManager.addButton(textureName, bData);
+            //saveManager.addButton(textureName, new ButtonData(stringToEdit, newButton.transform.position));
             changeSphereTexture teleport = newButton.GetComponent<changeSphereTexture>();
             teleport.scene = stringToEdit;
             newButton = null;
