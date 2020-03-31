@@ -2,11 +2,12 @@
 using System.Net;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 public class APIClient 
 {
     private HttpWebRequest request;
-    private HttpWebResponse response;
+    private string response;
 
     private string target_url;
     private string api_key;
@@ -32,29 +33,20 @@ public class APIClient
         dataStream.Write(byteArray, 0, byteArray.Length);
         dataStream.Close();
 
-        this.response = (HttpWebResponse) request.GetResponse();
+        return WaitResponse().Result;
+    }
 
+    private async Task<string> WaitResponse()
+    { 
+        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         StreamReader reader = new StreamReader(response.GetResponseStream());
-        string jsonResponse = reader.ReadToEnd();
-        return jsonResponse;
+        // string jsonResponse = reader.ReadToEnd();
+        return reader.ReadToEnd();
     }
 
     public string Get() 
     {
         this.request = (HttpWebRequest)WebRequest.Create(this.target_url);
-        this.response = (HttpWebResponse)request.GetResponse();
-
-        StreamReader reader = new StreamReader(response.GetResponseStream());
-        string jsonResponse = reader.ReadToEnd();
-
-        if ( jsonResponse != null)
-        {
-            return jsonResponse;
-        }
-        else
-        {
-            throw new Exception("Failed to connect with api endpoint. so sad, worst api endpoint ever.");
-            return null;
-        }
+        return WaitResponse().Result;
     }
 }
