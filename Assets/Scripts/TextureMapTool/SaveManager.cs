@@ -24,6 +24,9 @@ public class SaveManager : MonoBehaviour
     [SerializeField]
     private Hashtable buttons = new Hashtable();
 
+
+    public string savefile = "Assets/Resources/Save/DataFile.dat";
+
     // Start is called before the first frame update
     void Start()
     { 
@@ -90,7 +93,7 @@ public class SaveManager : MonoBehaviour
         Debug.Log(json);*/
 
         //serialize
-        FileStream fs = new FileStream("DataFile.dat", FileMode.Create);
+        FileStream fs = new FileStream(savefile, FileMode.Create);
         BinaryFormatter formatter = new BinaryFormatter();
         try 
         {
@@ -116,7 +119,7 @@ public class SaveManager : MonoBehaviour
 
         Hashtable t = null;
 
-        FileStream fs = new FileStream("DataFile.dat", FileMode.Open);
+        FileStream fs = new FileStream(savefile, FileMode.Open);
         try 
         {
             BinaryFormatter formatter = new BinaryFormatter();
