@@ -10,6 +10,8 @@ public class ServiceWorker : MonoBehaviour
 {
     public static ServiceWorker instance = null;
 
+    private const float API_MAX = 10 * 60.0f; // 10 Minutes
+
     public string keyWord;
     public string[] results;
     public int current_page;
@@ -19,6 +21,8 @@ public class ServiceWorker : MonoBehaviour
     public GameObject playerPrefab;
 
     private AssetBundle assetBundle;
+
+    private float api_timer;
 
     // Called when the Object is initialized
     void Awake()
@@ -56,7 +60,11 @@ public class ServiceWorker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        api_timer -= Time.deltaTime;
+        if ( api_timer <= 0 )
+        {
+            API.OpenWeatherController.GetWeather("London,uk");
+        }
     }
 
 
