@@ -28,7 +28,7 @@ public class szeneSwitch : MonoBehaviour
 
     void OnMouseOver()
     {
-        Debug.Log("hover over image");
+        //Debug.Log("hover over image");
          if (Input.GetMouseButtonDown(1))
          {
               Debug.Log("Load Scene" + scene);
