@@ -21,7 +21,6 @@ public class ServiceWorker : MonoBehaviour
     public GameObject playerPrefab;
 
     private AssetBundle assetBundle;
-
     private float api_timer;
 
     // Called when the Object is initialized
@@ -48,23 +47,22 @@ public class ServiceWorker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*
-        for ( int i = 1; i <= 5; i++)
-        {
-            Instantiate(hallPrefab, new Vector3(5 * i, 1, 0), Quaternion.identity);
-        }
-        Debug.Log("loading custome scenes form resources");
-        */       
+        Museum t = new Museum(0, "test", new List<string>());
+        Debug.Log(t.Get());
+        Museum m = MuseumController.Load(MuseumController.Default);
+        Debug.Log(m.Get());
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         api_timer -= Time.deltaTime;
         if ( api_timer <= 0 )
         {
             API.OpenWeatherController.GetWeather("London,uk");
         }
+        */
     }
 
 
