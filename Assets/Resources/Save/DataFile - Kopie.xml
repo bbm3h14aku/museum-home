@@ -1,0 +1,70 @@
+<ArrayOfKeyValueOfanyTypeanyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+  <KeyValueOfanyTypeanyType>
+    <Key xmlns:d3p1="http://www.w3.org/2001/XMLSchema" i:type="d3p1:string">map2</Key>
+    <Value xmlns:d3p1="http://schemas.datacontract.org/2004/07/" i:type="d3p1:ArrayOfButtonData">
+      <d3p1:ButtonData>
+        <d3p1:destination>map3</d3p1:destination>
+        <d3p1:position>
+          <d3p1:x>48.98704</d3p1:x>
+          <d3p1:y>-7.5612216</d3p1:y>
+          <d3p1:z>-6.56488848</d3p1:z>
+        </d3p1:position>
+      </d3p1:ButtonData>
+      <d3p1:ButtonData>
+        <d3p1:destination>map1</d3p1:destination>
+        <d3p1:position>
+          <d3p1:x>-49.91988</d3p1:x>
+          <d3p1:y>-0.441228122</d3p1:y>
+          <d3p1:z>-2.79471064</d3p1:z>
+        </d3p1:position>
+      </d3p1:ButtonData>
+    </Value>
+  </KeyValueOfanyTypeanyType>
+  <KeyValueOfanyTypeanyType>
+    <Key xmlns:d3p1="http://www.w3.org/2001/XMLSchema" i:type="d3p1:string">map4</Key>
+    <Value xmlns:d3p1="http://schemas.datacontract.org/2004/07/" i:type="d3p1:ArrayOfButtonData">
+      <d3p1:ButtonData>
+        <d3p1:destination>map3</d3p1:destination>
+        <d3p1:position>
+          <d3p1:x>-49.40091</d3p1:x>
+          <d3p1:y>-0.00359675358</d3p1:y>
+          <d3p1:z>-7.716881</d3p1:z>
+        </d3p1:position>
+      </d3p1:ButtonData>
+    </Value>
+  </KeyValueOfanyTypeanyType>
+  <KeyValueOfanyTypeanyType>
+    <Key xmlns:d3p1="http://www.w3.org/2001/XMLSchema" i:type="d3p1:string">map1</Key>
+    <Value xmlns:d3p1="http://schemas.datacontract.org/2004/07/" i:type="d3p1:ArrayOfButtonData">
+      <d3p1:ButtonData>
+        <d3p1:destination>map2</d3p1:destination>
+        <d3p1:position>
+          <d3p1:x>49.2468224</d3p1:x>
+          <d3p1:y>-6.409089</d3p1:y>
+          <d3p1:z>5.802968</d3p1:z>
+        </d3p1:position>
+      </d3p1:ButtonData>
+    </Value>
+  </KeyValueOfanyTypeanyType>
+  <KeyValueOfanyTypeanyType>
+    <Key xmlns:d3p1="http://www.w3.org/2001/XMLSchema" i:type="d3p1:string">map3</Key>
+    <Value xmlns:d3p1="http://schemas.datacontract.org/2004/07/" i:type="d3p1:ArrayOfButtonData">
+      <d3p1:ButtonData>
+        <d3p1:destination>map4</d3p1:destination>
+        <d3p1:position>
+          <d3p1:x>48.4105721</d3p1:x>
+          <d3p1:y>-6.82417059</d3p1:y>
+          <d3p1:z>-10.4808054</d3p1:z>
+        </d3p1:position>
+      </d3p1:ButtonData>
+      <d3p1:ButtonData>
+        <d3p1:destination>map2</d3p1:destination>
+        <d3p1:position>
+          <d3p1:x>-48.5148964</d3p1:x>
+          <d3p1:y>-0.08739865</d3p1:y>
+          <d3p1:z>-12.0953369</d3p1:z>
+        </d3p1:position>
+      </d3p1:ButtonData>
+    </Value>
+  </KeyValueOfanyTypeanyType>
+</ArrayOfKeyValueOfanyTypeanyType>
