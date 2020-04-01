@@ -5,14 +5,14 @@ using UnityEngine;
 public class changeSphereTexture : MonoBehaviour
 {
     public GameObject sphere;
-    private loadTextureToImagePreview lTTIP;
+    private SphereButtonEvent sphereButtonEvent;
     public string scene;
 
     // Start is called before the first frame update
     void Start()
     {   
-        sphere = GameObject.Find("ButtonEvents");
-        lTTIP = sphere.GetComponent<loadTextureToImagePreview>();
+        sphere = GameObject.Find("SpherePreview");
+        sphereButtonEvent = sphere.GetComponent<SphereButtonEvent>();
     }
 
     // Update is called once per frame
@@ -26,15 +26,13 @@ public class changeSphereTexture : MonoBehaviour
         //Debug.Log("hover over image");
          if (Input.GetMouseButtonDown(1))
          {
-            if(lTTIP!= null)
+            if(sphereButtonEvent!= null)
             {
-
-                lTTIP.loadTexture(scene);
-
+                sphereButtonEvent.loadTexture(scene);
             }
             else
             {
-                Debug.Log("lTTIP is null");
+                Debug.Log("sphereButtonEvent is null");
             }
          }
     }

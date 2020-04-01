@@ -410,6 +410,7 @@ MonoBehaviour:
   buttonPrefab: {fileID: 373213900585299712, guid: 3b9f6ab96f48149a8859a635dd1a7998,
     type: 3}
   saveManagerObject: {fileID: 1402686511}
+  searchPath: 360View/Wald/
   textureName: 
   activeButtons: []
 --- !u!1 &190783552
@@ -1322,9 +1323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb9b8834df67bc40b2611bbd9e30b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exportButton: {fileID: 326537819}
-  importButton: {fileID: 257337363}
-  sphere: {fileID: 103557020}
+  savefile: Assets/Resources/Save/DataFile.xml
 --- !u!4 &1402686513
 Transform:
   m_ObjectHideFlags: 0
@@ -1337,7 +1336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1512962158
 GameObject:
@@ -1713,7 +1712,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752552479}
   m_CullTransparentMesh: 0
---- !u!1 &1781659463
+--- !u!1 &2096182028
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1721,50 +1720,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1781659464}
-  - component: {fileID: 1781659465}
-  m_Layer: 5
-  m_Name: ButtonEvents
+  - component: {fileID: 2096182030}
+  - component: {fileID: 2096182029}
+  m_Layer: 0
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1781659464
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781659463}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 561.5, y: 318.5}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1781659465
+--- !u!114 &2096182029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781659463}
+  m_GameObject: {fileID: 2096182028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72671007dd464dbc91c1a9c8a8f7b22, type: 3}
+  m_Script: {fileID: 11500000, guid: 14eb97441237fa048bca72f48a3f343c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1227130521}
-  textureName: {fileID: 1202252623}
-  sphere: {fileID: 103557020}
   saveManagerObj: {fileID: 1402686511}
+  sphere: {fileID: 103557020}
+  loadButton: {fileID: 1227130521}
+  textureName: {fileID: 1202252623}
+  exportButton: {fileID: 326537819}
+  importButton: {fileID: 257337363}
+--- !u!4 &2096182030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096182028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 282.31793, y: 423.79355, z: 149.89429}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2128544884
 GameObject:
   m_ObjectHideFlags: 0
