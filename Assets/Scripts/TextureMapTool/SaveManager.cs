@@ -28,6 +28,7 @@ public class SaveManager : MonoBehaviour
         
     }
 
+    //Add button to room and in the savestate
     public void addButton(string room, ButtonData data)
     {
         if(buttons[room] == null)
@@ -42,22 +43,19 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    //loadButtons from savestate
     public List<ButtonData> loadButtons(string textureName)
     {
         return (List<ButtonData>) buttons[textureName];
     }
 
-    public List<ButtonData> getButtons(string scene)
-    {
-        return (List<ButtonData>) buttons[scene];
-    }
-
+    //export savestate to file
     public void export()
     {
         exporter.export(buttons, savefile);
     }
 
-
+    //import savestate from file
     public void import()
     {
         Hashtable t = exporter.import(savefile);

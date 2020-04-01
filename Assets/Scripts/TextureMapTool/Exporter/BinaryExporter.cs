@@ -39,8 +39,7 @@ public class BinaryExporter<T> : IExporter<T>
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            // Deserialize the hashtable from the file and 
-            // assign the reference to the local variable.
+            // Deserialize T from the file
             t = (T) formatter.Deserialize(fs);
         }
         catch (SerializationException e) 

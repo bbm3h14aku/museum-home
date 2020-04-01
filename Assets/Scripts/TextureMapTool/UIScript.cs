@@ -73,16 +73,20 @@ public class UIScript : MonoBehaviour
         //if button is pressed and texture name in stringToEdit is available
         if (GUI.Button(new Rect(5, 60, 100, 20), "OK") && Resources.Load("360View/Wald/" + stringToEdit))
         {
-
+            //finish buttondata and add it to the sphere
             newButtonData.destination = stringToEdit;
             sphereButtonEvent.addButton(newButtonData);
 
+            //add Buttondata to savestate
             saveManager.addButton(sphereButtonEvent.textureName, newButtonData);
 
+            //delete temporary buttondata
             newButtonData = null;
+            //disable window
             showDestinationWindow = false;
         }else if(GUI.Button(new Rect(110, 60, 100, 20), "Cancel"))
         {
+            //cancel the window
             newButtonData = null;
             showDestinationWindow = false;
         }
@@ -128,7 +132,7 @@ public class UIScript : MonoBehaviour
     {
         saveManager.import();
         //reload buttons
-        sphereButtonEvent.loadButtons(saveManager.getButtons(sphereButtonEvent.textureName));
+        sphereButtonEvent.loadButtons(saveManager.loadButtons(sphereButtonEvent.textureName));
     }
 
     //load texture

@@ -9,6 +9,7 @@ public class SphereButtonEvent : MonoBehaviour
 
     public GameObject buttonPrefab;
     public GameObject saveManagerObject;
+    public string searchPath = "360View/Wald/";
 
 
     public string textureName = "";
@@ -30,15 +31,20 @@ public class SphereButtonEvent : MonoBehaviour
         
     }
 
+    //create the button by using buttondata
     public void addButton(ButtonData data)
     {
+        //create the new button
         GameObject newButton = (GameObject) Instantiate(buttonPrefab, data.position, Quaternion.identity);
+        //fill the teleport script
         changeSphereTexture teleport = newButton.GetComponent<changeSphereTexture>();
         teleport.scene = data.destination;
         Debug.Log("Add Button to Scene" + textureName);
+        //add button to active buttons
         activeButtons.Add(newButton);
     }
 
+    //clear all buttons in this sphere
     public void clearAllButtons()
     {
         foreach(var i in activeButtons)
@@ -49,30 +55,36 @@ public class SphereButtonEvent : MonoBehaviour
         activeButtons.Clear();
     }
 
+    //load buttons from buttondata
     public void loadButtons(List<ButtonData> data)
     {
+        //clear all
         if(activeButtons.Count != 0)
             clearAllButtons();
+        //add All Buttons
         foreach(var i in data)
         {
-                    GameObject tempButton = (GameObject) Instantiate(buttonPrefab, i.position, Quaternion.identity);
-                    changeSphereTexture teleport = tempButton.GetComponent<changeSphereTexture>();
-                    teleport.scene = i.destination;
-
-                    activeButtons.Add(tempButton);
+                    addButton(i);
         }
     }
 
+    //load new texture to sphere
     public void loadTexture(string texName)
     {
-        string path = "360View/Wald/" + texName;
+        //add path to tex name
+        string path = searchPath + texName;
 
+        //load texture from path
         Texture2D texture  = (Texture2D) Resources.Load(path);
+        //if not null
         if (texture != null)
         {
             Debug.Log("load Texture: " + path);
+            //give the sphere material the new texture
             GetComponent<Renderer>().material.mainTexture = texture;
+            //refresh the texturename in this sphere
             textureName = texName;
+            //reload all buttons
             loadButtons(saveManager.loadButtons(texName));
         }
         else 

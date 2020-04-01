@@ -410,6 +410,7 @@ MonoBehaviour:
   buttonPrefab: {fileID: 373213900585299712, guid: 3b9f6ab96f48149a8859a635dd1a7998,
     type: 3}
   saveManagerObject: {fileID: 1402686511}
+  searchPath: 360View/Wald/
   textureName: 
   activeButtons: []
 --- !u!1 &190783552
