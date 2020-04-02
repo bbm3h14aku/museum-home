@@ -412,6 +412,7 @@ MonoBehaviour:
   saveManagerObject: {fileID: 1402686511}
   searchPath: 360View/Wald/
   textureName: 
+  saveManager: {fileID: 0}
   activeButtons: []
 --- !u!1 &190783552
 GameObject:

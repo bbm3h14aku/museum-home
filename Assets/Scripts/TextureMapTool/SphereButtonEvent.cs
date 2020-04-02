@@ -8,21 +8,23 @@ public class SphereButtonEvent : MonoBehaviour
 {
 
     public GameObject buttonPrefab;
-    public GameObject saveManagerObject;
     public string searchPath = "360View/Wald/";
 
 
     public string textureName = "";
 
-    private SaveManager saveManager = null;
+    public SaveManager saveManager = null;
         
     public List<GameObject> activeButtons = new List<GameObject>();
-
 
     // Start is called before the first frame update
     void Start()
     {
-        saveManager = saveManagerObject.GetComponent<SaveManager>();        
+        //saveManager = saveManagerObject.GetComponent<SaveManager>();
+        if(saveManager == null)
+        {
+            Debug.Log("saveManager is null");
+        }        
     }
 
     // Update is called once per frame
@@ -36,6 +38,8 @@ public class SphereButtonEvent : MonoBehaviour
     {
         //create the new button
         GameObject newButton = (GameObject) Instantiate(buttonPrefab, data.position, Quaternion.identity);
+        newButton.transform.localScale = transform.localScale /20;
+
         //fill the teleport script
         changeSphereTexture teleport = newButton.GetComponent<changeSphereTexture>();
         teleport.scene = data.destination;
@@ -85,7 +89,11 @@ public class SphereButtonEvent : MonoBehaviour
             //refresh the texturename in this sphere
             textureName = texName;
             //reload all buttons
-            loadButtons(saveManager.loadButtons(texName));
+            
+            if(saveManager != null)
+                loadButtons(saveManager.loadButtons(textureName));
+            else
+                Debug.Log("can't load Buttons");
         }
         else 
         { 

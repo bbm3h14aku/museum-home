@@ -37,6 +37,7 @@ public class UIScript : MonoBehaviour
         //setup object scripts
         saveManager = saveManagerObj.GetComponent<SaveManager>();
         sphereButtonEvent = sphere.GetComponent<SphereButtonEvent>();
+        sphereButtonEvent.saveManager = saveManager;
         
         //add click listener to all Buttons
         exportButton.onClick.AddListener(doExportButton);
