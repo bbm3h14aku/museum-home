@@ -1621,7 +1621,8 @@ PrefabInstance:
         type: 3}
       propertyPath: uiTransformPanel
       value: 
-      objectReference: {fileID: 100000, guid: 54efc7837aebfd97ea534189fa33a660, type: 3}
+      objectReference: {fileID: 4062902539783390712, guid: a2a3c98c4c194fd129dd22696852d4b9,
+        type: 3}
     - target: {fileID: 184850017202211503, guid: b1bf751583f81f2d6aa48dd9402396e4,
         type: 3}
       propertyPath: editorScene

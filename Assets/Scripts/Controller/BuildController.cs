@@ -57,7 +57,6 @@ public class BuildController : MonoBehaviour
     {
         this.lastId++;
         GameObject tmp = (GameObject) Instantiate(newElementObject, newElementPosition, newElementRotation);
-        tmp.tag = "BuildableElement";
         tmp.AddComponent<ElementController>();
         tmp.GetComponent<ElementController>().id = this.lastId;
         tmp.GetComponent<ElementController>().editable = true;
@@ -103,7 +102,7 @@ public class BuildController : MonoBehaviour
 
     public void OnClick(int idx)
     {
-        GameObject _selected = this.tempElements[idx - 1];
+        GameObject _selected = this.tempElements[idx];
         if ( _selected == null )
         {
             Debug.LogError("failed to load element from list.");

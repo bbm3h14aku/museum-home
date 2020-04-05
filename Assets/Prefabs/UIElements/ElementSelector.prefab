@@ -89,8 +89,9 @@ GameObject:
   - component: {fileID: 3372000659221319416}
   - component: {fileID: 1954251709679300156}
   - component: {fileID: 1712091503751531597}
+  - component: {fileID: 173548080516557460}
   m_Layer: 0
-  m_Name: ElementSelector 1
+  m_Name: ElementSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,3 +192,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &173548080516557460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345617556424377443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06686eb2904d45d9ab8062e4874417f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlay: {fileID: 4062902539783390712, guid: a2a3c98c4c194fd129dd22696852d4b9, type: 3}
