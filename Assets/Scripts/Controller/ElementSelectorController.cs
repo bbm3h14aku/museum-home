@@ -19,5 +19,6 @@ public class ElementSelectorController : MonoBehaviour
 
     public void OnClick()
     {
+        Debug.Log("click triggerd: " + index);
     }
 }

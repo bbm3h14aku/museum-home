@@ -40,7 +40,9 @@ public class BuildController : MonoBehaviour
 
     public MuseumObject _current_museum;
 
-    private List<GameObject> tempElements;
+    public GameObject[] tempElements;
+    public const int MAX_TEMP_ELEMENTS = 32;
+
     private int lastId;
 
     public void AddCornerElement()
@@ -55,20 +57,20 @@ public class BuildController : MonoBehaviour
 
     public void AddElement(GameObject newElementObject, Vector3 newElementPosition, Quaternion newElementRotation)
     {
-        this.lastId++;
         GameObject tmp = (GameObject) Instantiate(newElementObject, newElementPosition, newElementRotation);
         tmp.AddComponent<ElementController>();
         tmp.GetComponent<ElementController>().id = this.lastId;
         tmp.GetComponent<ElementController>().editable = true;
-        this.tempElements.Add(tmp);
 
         GameObject btn = (GameObject) Instantiate(this.dataObject.uiElementSelector, this.contentList.transform.position, this.contentList.transform.rotation);
         btn.transform.SetParent(this.contentList.transform);
-        btn.GetComponent<ElementSelectorController>().index = this.tempElements.Count;
-        btn.GetComponent<Button>().onClick.AddListener(() => OnClick(btn.GetComponent<ElementSelectorController>().index));
-        btn.transform.GetChild(0).GetComponent<Text>().text = "Object" + this.tempElements.Count;
+        btn.GetComponent<ElementSelectorController>().index = this.lastId;
+        btn.transform.GetChild(0).GetComponent<Text>().text = "Object " + this.lastId;
         btn.gameObject.SetActive(true);
         btn.GetComponent<ElementSelectorController>().enabled = true;
+
+        this.tempElements[lastId] = tmp;
+        this.lastId++;
     }
 
     public void mouseHover()
@@ -89,7 +91,7 @@ public class BuildController : MonoBehaviour
     {
         /* Erst wird das Global Datenobject geladen, damit die Benötigtten Assets System weit zur Verfügung stehen */
         this.dataObject = GameObject.FindGameObjectsWithTag("DataObject")[0].GetComponent<DataObjectController>();
-        this.tempElements = new List<GameObject>();
+        this.tempElements = new GameObject[BuildController.MAX_TEMP_ELEMENTS];
         this.lastId = 0;
     }
 

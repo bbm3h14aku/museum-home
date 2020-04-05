@@ -191,7 +191,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1954251709679300156}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173548080516557460}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &173548080516557460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,4 +215,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06686eb2904d45d9ab8062e4874417f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlay: {fileID: 4062902539783390712, guid: a2a3c98c4c194fd129dd22696852d4b9, type: 3}
+  index: 0
