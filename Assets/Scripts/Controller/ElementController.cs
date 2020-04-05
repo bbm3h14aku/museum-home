@@ -15,6 +15,8 @@ public class ElementController : MonoBehaviour
     public float y_angle;
     public float z_angle;
 
+    public List<ElementController> childs;
+
     public void moveOnZ(float zPos)
     {
         this.zPos = zPos;
@@ -49,5 +51,15 @@ public class ElementController : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log("trigger " + this.id);
+    }
+
+    public void addChild(ElementController childController)
+    {
+        this.childs.Add(childController);
+    }
+
+    public ElementController getChild(int idx)
+    {
+        return this.childs.GetEnumerator(idx) as ElementController;
     }
 }
