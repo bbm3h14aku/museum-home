@@ -1525,17 +1525,17 @@ PrefabInstance:
     - target: {fileID: 184850017202211500, guid: b1bf751583f81f2d6aa48dd9402396e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 504.70377
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 184850017202211500, guid: b1bf751583f81f2d6aa48dd9402396e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 272.8022
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 184850017202211500, guid: b1bf751583f81f2d6aa48dd9402396e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 167.6767
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 184850017202211500, guid: b1bf751583f81f2d6aa48dd9402396e4,
         type: 3}
@@ -1633,5 +1633,17 @@ PrefabInstance:
       propertyPath: visitorScene
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 184850017202211503, guid: b1bf751583f81f2d6aa48dd9402396e4,
+        type: 3}
+      propertyPath: doorElement
+      value: 
+      objectReference: {fileID: 8098125597325863304, guid: bb02770c33d3b11908a88c48fdf1d7f0,
+        type: 3}
+    - target: {fileID: 184850017202211503, guid: b1bf751583f81f2d6aa48dd9402396e4,
+        type: 3}
+      propertyPath: exponatLoader
+      value: 
+      objectReference: {fileID: 6030235961832357723, guid: 3117b86f0c078c2428280250b2acbe0d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1bf751583f81f2d6aa48dd9402396e4, type: 3}

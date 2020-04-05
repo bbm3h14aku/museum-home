@@ -22,28 +22,28 @@ public class BuildController : MonoBehaviour
 
     public GameObject contentList;
     public GameObject selectedElement;
-    public GameObject _drag;
-
-    public Vector3 screenPosition;
-    //public GameObject elementSelector;
 
     public DataObjectController dataObject;
 
-    public GameObject transformPanel;
     //public TransformPanelController transformController;
 
     public Transform editCamera;
     public Transform uiBuildOverlay;
-    //public Transform uiTransformPanel;
+    public GameObject transformPanel;
 
     public APIClient client;
 
     public MuseumObject _current_museum;
 
     public GameObject[] tempElements;
-    public const int MAX_TEMP_ELEMENTS = 32;
+    public const int MAX_TEMP_ELEMENTS = 8;
 
     private int lastId;
+
+    public void AddDoorElement()
+    {
+        this.AddElement(this.dataObject.doorElement, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
+    }
 
     public void AddCornerElement()
     {
@@ -58,24 +58,27 @@ public class BuildController : MonoBehaviour
     public void AddElement(GameObject newElementObject, Vector3 newElementPosition, Quaternion newElementRotation)
     {
         GameObject tmp = (GameObject) Instantiate(newElementObject, newElementPosition, newElementRotation);
+
         tmp.AddComponent<ElementController>();
         tmp.GetComponent<ElementController>().id = this.lastId;
         tmp.GetComponent<ElementController>().editable = true;
 
-        GameObject btn = (GameObject) Instantiate(this.dataObject.uiElementSelector, this.contentList.transform.position, this.contentList.transform.rotation);
-        btn.transform.SetParent(this.contentList.transform);
-        btn.GetComponent<ElementSelectorController>().index = this.lastId;
-        btn.transform.GetChild(0).GetComponent<Text>().text = "Object " + this.lastId;
-        btn.gameObject.SetActive(true);
-        btn.GetComponent<ElementSelectorController>().enabled = true;
+        this.createElementSelector();
 
-        this.tempElements[lastId] = tmp;
+        this.tempElements[this.lastId] = tmp;
+        Debug.Log("Adding Element " + this.lastId + " to global list");
         this.lastId++;
     }
 
-    public void mouseHover()
+    private void createElementSelector()
     {
-        Debug.Log("mouse over object");
+        GameObject btn = (GameObject)Instantiate(this.dataObject.uiElementSelector, this.contentList.transform.position, this.contentList.transform.rotation);
+        btn.transform.SetParent(this.contentList.transform);
+        btn.GetComponent<ElementSelectorController>().index = this.lastId;
+        btn.GetComponent<ElementSelectorController>().target = tempElements[this.lastId];
+        btn.transform.GetChild(0).GetComponent<Text>().text = "Object " + this.lastId;
+        btn.gameObject.SetActive(true);
+        btn.GetComponent<ElementSelectorController>().enabled = true;
     }
 
     public void Preview()
@@ -102,44 +105,8 @@ public class BuildController : MonoBehaviour
         this.transformPanel.SetActive(true);
     }
 
-    public void OnClick(int idx)
+    public void saveBuilding()
     {
-        GameObject _selected = this.tempElements[idx];
-        if ( _selected == null )
-        {
-            Debug.LogError("failed to load element from list.");
-            return;
-        }
-        this.selectedElement = _selected;
-        /*
-        GameObject.Find("Canvas").GetComponent<TransformPanelController>().enabled = true;
-        //Vector3 current_pos = _selected.transform.position + transform.position;
-        //Debug.Log("try to transform [" + idx + "]. Position(" + current_pos + ")");
-        //Debug.Log(_selected.transform.position);
-        //this.uiBuildOverlay.GetComponent<TransformPanel>().GetComponent<TransformPanelController>().targetElement = _selected;
-        //this.uiBuildOverlay.GetComponent<TransformPanel>().gameObject.SetActive(true);
-        */
-    }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            var ray = camera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                // whatever tag you are looking for on your game object
-                if (hit.collider.tag == "BuildableElement")
-                {
-                    Debug.Log("---> Hit: ");
-                }
-               else
-                {
-                    Debug.Log("wrong tag[" + hit.collider.tag + "]");
-                }
-            }
-        }
     }
 }

@@ -10,8 +10,8 @@ public class DataObjectController : MonoBehaviour
 
     public GameObject hallElement;
     public GameObject cornerElement; 
-    public GameObject entryElement;
-    public GameObject exponatElement;
+    public GameObject doorElement;
+    public GameObject exponatLoader;
 
     public GameObject uiTransformPanel;
     public GameObject uiElementSelector;

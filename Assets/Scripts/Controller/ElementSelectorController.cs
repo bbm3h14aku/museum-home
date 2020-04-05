@@ -5,6 +5,9 @@ using UnityEngine;
 public class ElementSelectorController : MonoBehaviour
 {
     public int index;
+    public GameObject target;
+    public GameObject overlay;
+    public bool active;
 
     // Start is called before the first frame update
     void Start()
@@ -20,5 +23,6 @@ public class ElementSelectorController : MonoBehaviour
     public void OnClick()
     {
         Debug.Log("click triggerd: " + index);
+        Instantiate(overlay);
     }
 }

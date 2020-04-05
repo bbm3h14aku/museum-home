@@ -69,8 +69,8 @@ public class VisitorController : MonoBehaviour
                 case "corner":
                     instance = this.dataObject.cornerElement;
                     break;
-                case "entry":
-                    instance = this.dataObject.entryElement;
+                case "door":
+                    instance = this.dataObject.doorElement;
                     break;
                 default:
                     continue;

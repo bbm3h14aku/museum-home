@@ -26,6 +26,7 @@ public class TransformPanelController : MonoBehaviour
     public void Cancle()
     {
         gameObject.SetActive(false);
+        Destroy(this);
     }
 
     // Update is called once per frame
@@ -39,6 +40,8 @@ public class TransformPanelController : MonoBehaviour
 
         targetElement.transform.position = new Vector3(x, y, z);
         gameObject.SetActive(false);
+
+        Destroy(this);
     }
 }
 
