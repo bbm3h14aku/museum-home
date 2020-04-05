@@ -29,6 +29,8 @@ public class BuildController : MonoBehaviour
 
     public Transform editCamera;
     public Transform uiBuildOverlay;
+    public Transform canvas;
+
     public GameObject uiNewElementOverlay;
 
     public APIClient client;
@@ -40,7 +42,7 @@ public class BuildController : MonoBehaviour
     {
         /* Erst wird das Global Datenobject geladen, damit die Benötigtten Assets System weit zur Verfügung stehen */
         this.dataObject = GameObject.FindGameObjectsWithTag("DataObject")[0].GetComponent<DataObjectController>();
-        this.lastId = 0;
+        this.lastId = this.dataObject.lastIdx;
     }
 
     public void Preview()
@@ -69,7 +71,10 @@ public class BuildController : MonoBehaviour
 
     public void AddElement(GameObject newElementObject, Vector3 newElementPosition, Quaternion newElementRotation)
     {
-        this.uiNewElementOverlay.SetActive(true);
+        GameObject uiNewElementObj = Instantiate(this.uiNewElementOverlay);
+        uiNewElementOverlay.transform.SetParent(this.canvas.transform);
+        uiNewElementObj.GetComponent<AddElementPanelController>().newElement = newElementObject;
+        uiNewElementOverlay.SetActive(true);
         /*
         GameObject tmp = (GameObject) Instantiate(newElementObject, newElementPosition, newElementRotation);
 
@@ -83,6 +88,11 @@ public class BuildController : MonoBehaviour
         Debug.Log("Adding Element " + this.lastId + " to global list");
         this.lastId++;
         */
+    }
+
+    public void CloseAddElementPanel()
+    {
+
     }
 
     private void createElementSelector()
