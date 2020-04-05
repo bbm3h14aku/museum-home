@@ -18,6 +18,9 @@ public class DataObjectController : MonoBehaviour
 
     public GameObject serviceElement; 
 
+    public GameObject[] worldElements;
+    public const int MAX_WORLD_ELEMNTS = 8;
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -31,5 +34,10 @@ public class DataObjectController : MonoBehaviour
     public void loadVisitor()
     {
         SceneManager.LoadScene(visitorScene);
+    }
+
+    public void saveWorld()
+    {
+
     }
 }

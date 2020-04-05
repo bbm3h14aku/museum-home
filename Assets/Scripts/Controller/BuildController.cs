@@ -29,16 +29,28 @@ public class BuildController : MonoBehaviour
 
     public Transform editCamera;
     public Transform uiBuildOverlay;
-    public GameObject transformPanel;
+    public GameObject uiNewElementOverlay;
 
     public APIClient client;
-
-    public MuseumObject _current_museum;
-
-    public GameObject[] tempElements;
-    public const int MAX_TEMP_ELEMENTS = 8;
-
+   
     private int lastId;
+
+    // uiTransformPanel
+    void Awake()
+    {
+        /* Erst wird das Global Datenobject geladen, damit die Benötigtten Assets System weit zur Verfügung stehen */
+        this.dataObject = GameObject.FindGameObjectsWithTag("DataObject")[0].GetComponent<DataObjectController>();
+        this.lastId = 0;
+    }
+
+    public void Preview()
+    {
+        this.editCamera.gameObject.SetActive(false);
+        // this.createBuilding();
+        Instantiate(this.dataObject.serviceElement);
+        this.uiBuildOverlay.gameObject.SetActive(false);
+        Debug.Log("adding new Element to scene");
+    }
 
     public void AddDoorElement()
     {
@@ -57,6 +69,8 @@ public class BuildController : MonoBehaviour
 
     public void AddElement(GameObject newElementObject, Vector3 newElementPosition, Quaternion newElementRotation)
     {
+        this.uiNewElementOverlay.SetActive(true);
+        /*
         GameObject tmp = (GameObject) Instantiate(newElementObject, newElementPosition, newElementRotation);
 
         tmp.AddComponent<ElementController>();
@@ -65,9 +79,10 @@ public class BuildController : MonoBehaviour
 
         this.createElementSelector();
 
-        this.tempElements[this.lastId] = tmp;
+        GameObject.FindGameObjectsWithTag("DataObject")[0].GetComponent<DataObjectController>().worldElements[this.lastId] = tmp;
         Debug.Log("Adding Element " + this.lastId + " to global list");
         this.lastId++;
+        */
     }
 
     private void createElementSelector()
@@ -75,38 +90,9 @@ public class BuildController : MonoBehaviour
         GameObject btn = (GameObject)Instantiate(this.dataObject.uiElementSelector, this.contentList.transform.position, this.contentList.transform.rotation);
         btn.transform.SetParent(this.contentList.transform);
         btn.GetComponent<ElementSelectorController>().index = this.lastId;
-        btn.GetComponent<ElementSelectorController>().target = tempElements[this.lastId];
         btn.transform.GetChild(0).GetComponent<Text>().text = "Object " + this.lastId;
         btn.gameObject.SetActive(true);
         btn.GetComponent<ElementSelectorController>().enabled = true;
     }
-
-    public void Preview()
-    {
-        this.editCamera.gameObject.SetActive(false);
-        // this.createBuilding();
-        Instantiate(this.dataObject.serviceElement);
-        this.uiBuildOverlay.gameObject.SetActive(false);
-        Debug.Log("adding new Element to scene");
-    }
-    // uiTransformPanel
-    void Awake()
-    {
-        /* Erst wird das Global Datenobject geladen, damit die Benötigtten Assets System weit zur Verfügung stehen */
-        this.dataObject = GameObject.FindGameObjectsWithTag("DataObject")[0].GetComponent<DataObjectController>();
-        this.tempElements = new GameObject[BuildController.MAX_TEMP_ELEMENTS];
-        this.lastId = 0;
-    }
-
-    public void showTransformPanel()
-    {
-        this.transformPanel.GetComponent<TransformPanelController>().targetElement = this.selectedElement;
-        this.transformPanel.GetComponent<TransformPanelController>().enabled = true;
-        this.transformPanel.SetActive(true);
-    }
-
-    public void saveBuilding()
-    {
-
-    }
+   
 }
