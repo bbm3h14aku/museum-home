@@ -65,7 +65,6 @@ public class BuildController : MonoBehaviour
 
         GameObject btn = (GameObject) Instantiate(this.dataObject.uiElementSelector, this.contentList.transform.position, this.contentList.transform.rotation);
         btn.transform.SetParent(this.contentList.transform);
-        btn.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         btn.GetComponent<ElementSelectorController>().index = this.tempElements.Count;
         btn.GetComponent<Button>().onClick.AddListener(() => OnClick(btn.GetComponent<ElementSelectorController>().index));
         btn.transform.GetChild(0).GetComponent<Text>().text = "Object" + this.tempElements.Count;

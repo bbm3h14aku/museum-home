@@ -60,6 +60,6 @@ public class ElementController : MonoBehaviour
 
     public ElementController getChild(int idx)
     {
-        return this.childs.GetEnumerator(idx) as ElementController;
+        return this.childs[idx];
     }
 }
