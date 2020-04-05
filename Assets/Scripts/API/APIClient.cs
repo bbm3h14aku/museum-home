@@ -48,6 +48,11 @@ public class APIClient
         this.SetParam("key", api_key);
     }
 
+    public void SetParam(string key, int val)
+    {
+        this._params.Add(new URIParam(key, val.ToString()));
+    }
+
     public void SetParam(string key, string val)
     {
         this._params.Add(new URIParam(key, val));
@@ -73,8 +78,11 @@ public class APIClient
     public string Post(API.APIObject data)
     {
         string raw = data.Get();
-
-        byte[] byteArray = Encoding.UTF8.GetBytes(raw);
+        return this.Post(raw);
+    }
+    public string Post(string json)
+    { 
+        byte[] byteArray = Encoding.UTF8.GetBytes(json);
 
         this.request = (HttpWebRequest)WebRequest.Create(this.URIBuilder());
         this.request.Method = "POST";

@@ -10,6 +10,7 @@ TagManager:
   - ServiceWorker
   - lightObject
   - Building
+  - DataObject
   layers:
   - Default
   - TransparentFX

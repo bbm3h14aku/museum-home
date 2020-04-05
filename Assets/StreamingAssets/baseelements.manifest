@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 603446780
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 660dcab28197af44bbc4247a8cea20a2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 27295f96fcdc2b917bd061e8817c7e02
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+Assets:
+- Assets/BundledAssets/baseelements/Exponat.prefab
+Dependencies: []

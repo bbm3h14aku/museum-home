@@ -8,10 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DemoScene.unity
     guid: 6e8394cfba2477f00bab722d044b1a50
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SphereView.unity
     guid: 1a571b20745d43cee8e12a078a0d9ed6
+  - enabled: 0
+    path: Assets/Scenes/EmptyScene.unity
+    guid: 035ec46e794a933dcb108e7efef32206
+  - enabled: 1
+    path: Assets/Scenes/Final/Menu_Final_SceneV0.scene.unity
+    guid: e8ef64e2adfcec55d8b31d5c81a73f52
+  - enabled: 1
+    path: Assets/Scenes/Final/Visitor_Final_SceneV0.scene.unity
+    guid: 186817940e895e5a48778fef7de0633a
+  - enabled: 1
+    path: Assets/Scenes/Final/Config_Final_SceneV0.scene.unity
+    guid: 8f93b1fae62182daa9556101ed2f419c
   m_configObjects: {}

@@ -1,0 +1,44 @@
+ManifestFileVersion: 0
+CRC: 2420027689
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6f358b1fd9456926869c8a0c0fdd23e1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 92316fc58163c0fd8d90dcd3495f814b
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 102
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: d4087dede2615732d93f7b8f434fdbd7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a0215ddeebb0f759b9b8dcea5cee7d67, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+Assets:
+- Assets/BundledAssets/testbundle/BundledSpritObject.prefab
+- Assets/BundledAssets/testbundle/Materials/blue.mat
+- Assets/BundledAssets/testbundle/ObjectPresentation.prefab
+Dependencies: []

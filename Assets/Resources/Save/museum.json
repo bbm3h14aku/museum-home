@@ -1,0 +1,15 @@
+{
+  "id": 0,
+  "label": "demo",
+  "author": "museum@home",
+  "builder": [
+    {
+      "label": "hall",
+      "position": { "x": 0, "y": 0, "z": 0 },
+    },
+    {
+      "label": "hall",
+      "position": { "x": 5.35, "y": 0, "z": 0 },
+    },
+  ]
+}
