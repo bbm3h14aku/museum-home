@@ -10,10 +10,13 @@ public class SaveManager : MonoBehaviour
 {
    
     [SerializeField]
+    //private Dictionary<string, List<ButtonData>> buttons = new Dictionary<string, List<ButtonData>>();
     private Hashtable buttons = new Hashtable();
 
-    //private IExporter exporter = new BinaryExporter();
+    //private IExporter<Hashtable> exporter = new BinaryExporter<Hashtable>();
     private IExporter<Hashtable> exporter = new XMLExporter<Hashtable,List<ButtonData>>();
+    //private IExporter<Dictionary<string, List<ButtonData>>> exporter = new JSONExporter<Dictionary<string, List<ButtonData>>, List<ButtonData>>();
+    //private IExporter<Dictionary<string, List<ButtonData>>> exporter = new XMLExporter<Dictionary<string, List<ButtonData>>,List<ButtonData>>();
 
     public string savefile = "Assets/Resources/Save/DataFile.xml";
 
@@ -33,12 +36,14 @@ public class SaveManager : MonoBehaviour
     {
         if(buttons[room] == null)
         {
+            Debug.Log("Add new Room");
             List<ButtonData> buttonList = new List<ButtonData>();
             buttonList.Add(data);
             buttons.Add(room, buttonList);
         }
         else
         {
+            Debug.Log("Add Button to room");
             ((List<ButtonData>)buttons[room]).Add(data);
         }
     }
@@ -46,6 +51,7 @@ public class SaveManager : MonoBehaviour
     //loadButtons from savestate
     public List<ButtonData> loadButtons(string textureName)
     {
+        Debug.Log("Load Button");
         return (List<ButtonData>) buttons[textureName];
     }
 
@@ -60,14 +66,16 @@ public class SaveManager : MonoBehaviour
     public void import()
     {
         Hashtable t = exporter.import(savefile);
+        //Dictionary<string, List<ButtonData>> t = new Dictionary<string, List<ButtonData>>();
         
-        foreach (DictionaryEntry de in t) 
+        foreach (DictionaryEntry de in t)//KeyValuePair<string, List<ButtonData>> de in t) 
         {
             List<ButtonData> list = (List<ButtonData>)de.Value;
             foreach (ButtonData b in list) 
             {
                 Debug.Log(de.Key + " : " + b.destination + b.position.ToString());
             }
+            //Debug.Log(de.ToString());
         }
 
         buttons = t;

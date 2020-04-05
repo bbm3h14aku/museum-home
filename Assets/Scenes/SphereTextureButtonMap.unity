@@ -409,7 +409,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 373213900585299712, guid: 3b9f6ab96f48149a8859a635dd1a7998,
     type: 3}
-  saveManagerObject: {fileID: 1402686511}
   searchPath: 360View/Wald/
   textureName: 
   saveManager: {fileID: 0}
@@ -1324,7 +1323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb9b8834df67bc40b2611bbd9e30b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  savefile: Assets/Resources/Save/DataFile.xml
+  savefile: Assets/Resources/Save/WaldButtons.xml
 --- !u!4 &1402686513
 Transform:
   m_ObjectHideFlags: 0

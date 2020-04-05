@@ -133,7 +133,9 @@ public class UIScript : MonoBehaviour
     {
         saveManager.import();
         //reload buttons
-        sphereButtonEvent.loadButtons(saveManager.loadButtons(sphereButtonEvent.textureName));
+        List<ButtonData> data = saveManager.loadButtons(sphereButtonEvent.textureName);
+        if(data != null)
+            sphereButtonEvent.loadButtons(data);
     }
 
     //load texture
