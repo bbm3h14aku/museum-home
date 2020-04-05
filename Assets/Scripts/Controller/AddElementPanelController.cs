@@ -29,9 +29,16 @@ public class AddElementPanelController : MonoBehaviour
 
     public void AddElement()
     {
-        float x_pos = float.Parse(this.xPos.text);
-        float y_pos = float.Parse(this.yPos.text);
-        float z_pos = float.Parse(this.zPos.text);
+        float x_pos = 0;
+        float y_pos = 0;
+        float z_pos = 0;
+
+        if ( Stringutils.isNumeric(this.xPos.text) && Stringutils.isNumeric(this.yPos.text) && Stringutils.isNumeric(this.zPos.text) )
+        {
+            x_pos = float.Parse(this.xPos.text);
+            y_pos = float.Parse(this.yPos.text);
+            z_pos = float.Parse(this.zPos.text);
+        }
 
         float x_rot = float.Parse(this.xRot.text);
         float y_rot = float.Parse(this.yRot.text);
@@ -44,8 +51,12 @@ public class AddElementPanelController : MonoBehaviour
         DataObjectController dataObj = DataObjectController.GetInstance();
         dataObj.worldElements[dataObj.lastIdx] = obj;
         dataObj.lastIdx++; 
+    }
 
-        Destroy(this);
+    public void Close()
+    {
+        Debug.Log("try to close/hide window");
+        this.enabled = false;
     }
    
 }

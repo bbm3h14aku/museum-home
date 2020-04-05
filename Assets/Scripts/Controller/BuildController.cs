@@ -71,10 +71,8 @@ public class BuildController : MonoBehaviour
 
     public void AddElement(GameObject newElementObject, Vector3 newElementPosition, Quaternion newElementRotation)
     {
-        GameObject uiNewElementObj = Instantiate(this.uiNewElementOverlay);
-        uiNewElementOverlay.transform.SetParent(this.canvas.transform);
-        uiNewElementObj.GetComponent<AddElementPanelController>().newElement = newElementObject;
-        uiNewElementOverlay.SetActive(true);
+        this.uiNewElementOverlay.GetComponent<AddElementPanelController>().newElement = newElementObject;
+        this.uiNewElementOverlay.SetActive(true);
         /*
         GameObject tmp = (GameObject) Instantiate(newElementObject, newElementPosition, newElementRotation);
 
