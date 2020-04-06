@@ -8,6 +8,10 @@ public class ExponatLoader : MonoBehaviour
     public string bundleName = "testbundle";
     public string assetName = "BundledSpritObject";
 
+    public string description;
+    public string label;
+    public string imageurl;
+
     public API.ExponatObject exponatData;
  
     // Start is called before the first frame update

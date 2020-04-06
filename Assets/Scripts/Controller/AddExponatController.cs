@@ -7,18 +7,39 @@ public class AddExponatController : MonoBehaviour
 {
     public Button btnSave;
     public Button btnCancle;
+
+    public Text txtDescription;
+    public Text txtLabel;
+    public Text txtUrl;
+
+    public DataObjectController dataObject;
+    public GameObject _parent;
+
     public int parentId;
     public int id;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Save()
     {
+        dataObject = DataObjectController.GetInstance();
+        if (parentId >= 0)
+        {
+            GameObject _object = Instantiate(dataObject.exponatLoader);
+            _object.GetComponent<ExponatLoader>().description = txtDescription.text;
+            _object.GetComponent<ExponatLoader>().label = txtLabel.text;
+            _object.GetComponent<ExponatLoader>().imageurl = txtUrl.text;
+        }
         
+        this.Close();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Cancle()
     {
-        
+        this.Close();
+    }
+
+    public void Close()
+    {
+        _parent.SetActive(true);
+        Destroy(gameObject);
     }
 }

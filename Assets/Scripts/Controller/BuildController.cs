@@ -45,8 +45,10 @@ public class BuildController : MonoBehaviour
     {
         /* Erst wird das Global Datenobject geladen, damit die Benötigtten Assets System weit zur Verfügung stehen */
         this.dataObject = GameObject.FindGameObjectsWithTag("DataObject")[0].GetComponent<DataObjectController>();
-        this.lastId = 0;
+    }
 
+    void Start()
+    {
         this.dataObject.worldElements[this.lastId] = Instantiate(this.dataObject.spawnElement, VNull, Quaternion.Euler(0f, 0f, 0f));
         this.lastId++;
     }

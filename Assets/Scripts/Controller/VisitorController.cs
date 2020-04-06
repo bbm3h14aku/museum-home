@@ -63,6 +63,9 @@ public class VisitorController : MonoBehaviour
 
             switch (m.elements[i].type)
             {
+                case "spawn":
+                    instance = this.dataObject.spawnElement;
+                    break;
                 case "hall":
                     instance = this.dataObject.hallElement;
                     break;

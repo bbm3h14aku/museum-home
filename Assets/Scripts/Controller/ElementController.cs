@@ -15,8 +15,23 @@ public class ElementController : MonoBehaviour
     public float x_angle;
     public float y_angle;
     public float z_angle;
+    
+    public GameObject[] Childs;
 
-    public List<ElementController> childs;
+    public int GetChildSize()
+    {
+        return Childs.Length;
+    }
+
+    public void SetChild(int idx, GameObject gameObject)
+    {
+        Childs[idx] = gameObject;
+    }
+
+    public GameObject GetChild(int idx)
+    {
+        return Childs[idx];
+    }
 
     public API.ElementObject GetElementObject()
     {
@@ -25,6 +40,7 @@ public class ElementController : MonoBehaviour
         obj.pos_x = this.xPos;
         obj.pos_y = this.yPos;
         obj.pos_z = this.zPos;
+
         obj.rot_x = this.x_angle;
         obj.rot_y = this.y_angle;
         obj.rot_z = this.z_angle;
@@ -66,15 +82,5 @@ public class ElementController : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log("trigger " + this.id);
-    }
-
-    public void addChild(ElementController childController)
-    {
-        this.childs.Add(childController);
-    }
-
-    public ElementController getChild(int idx)
-    {
-        return this.childs[idx];
     }
 }

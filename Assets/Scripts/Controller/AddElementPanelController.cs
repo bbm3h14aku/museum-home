@@ -61,25 +61,14 @@ public class AddElementPanelController : MonoBehaviour
         }
     }
 
-    public void OnExponatCancle()
-    {
-        Debug.Log("cancle element");
-    }
-
-    public void OnExponatSave()
-    {
-        Debug.Log("saving element");
-    }
-
     public void ExponatOnChange(int idx)
     {
         Debug.Log("changing exponat position: " + idx);
         GameObject exponatOverlay = Instantiate(this.dataObject.uiExponatPanel);
 
+        exponatOverlay.GetComponent<AddExponatController>()._parent = gameObject;
         exponatOverlay.GetComponent<AddExponatController>().parentId = this.index;
         exponatOverlay.GetComponent<AddExponatController>().id = idx;
-        exponatOverlay.GetComponent<AddExponatController>().btnSave.onClick.AddListener(delegate { OnExponatSave(); });
-        exponatOverlay.GetComponent<AddExponatController>().btnCancle.onClick.AddListener(delegate { OnExponatCancle(); });
         gameObject.SetActive(false);
     }
 
@@ -122,11 +111,8 @@ public class AddElementPanelController : MonoBehaviour
     {
         GameObject obj = Instantiate(this.newElement, position, rotation);
 
-        DataObjectController dataObj = DataObjectController.GetInstance();
-        dataObj.worldElements[dataObj.lastIdx] = obj;
-        this.index = dataObj.lastIdx;
+        this.index = DataObjectController.AddWorldElement(obj);
         this.createElementSelector();
-        dataObj.lastIdx++;
 
         this.Close();
     }

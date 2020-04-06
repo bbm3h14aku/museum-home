@@ -112,6 +112,21 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &155298360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4064376411549200472, guid: cb03216f54652bce3b69f0acecdee6c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3893762034438908354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!45 &155298362
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155298360}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 9a9a449388aa42448907b5bf20a95fc5, type: 2}
 --- !u!1 &1793903298 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5382632032375929373, guid: cb03216f54652bce3b69f0acecdee6c7,
@@ -197,6 +212,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DataObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 184850017202211501, guid: b1bf751583f81f2d6aa48dd9402396e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1bf751583f81f2d6aa48dd9402396e4, type: 3}
@@ -475,17 +495,17 @@ PrefabInstance:
     - target: {fileID: 2599739251880439946, guid: cb03216f54652bce3b69f0acecdee6c7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 2599739251880439946, guid: cb03216f54652bce3b69f0acecdee6c7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -60
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: 2599739251880439946, guid: cb03216f54652bce3b69f0acecdee6c7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3238354154035818559, guid: cb03216f54652bce3b69f0acecdee6c7,
         type: 3}
@@ -791,12 +811,12 @@ PrefabInstance:
     - target: {fileID: 5780292134579793408, guid: cb03216f54652bce3b69f0acecdee6c7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000017344952
+      value: -0.000012244041
       objectReference: {fileID: 0}
     - target: {fileID: 5780292134579793408, guid: cb03216f54652bce3b69f0acecdee6c7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000010184072
+      value: -0.0000016054408
       objectReference: {fileID: 0}
     - target: {fileID: 5780292134579793408, guid: cb03216f54652bce3b69f0acecdee6c7,
         type: 3}
