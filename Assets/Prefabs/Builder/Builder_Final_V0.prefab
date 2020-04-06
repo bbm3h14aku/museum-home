@@ -1767,17 +1767,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   museumId: 0
-  camera: {fileID: 0}
+  camera: {fileID: 7131536699234564960}
   exponatElement: {fileID: 441652259391193984, guid: 282c3b53da69a0cac8ab20aa294b54e2,
     type: 3}
-  contentList: {fileID: 0}
+  contentList: {fileID: 9129579219963064175}
   selectedElement: {fileID: 0}
   dataObject: {fileID: 0}
   editCamera: {fileID: 2599739251880439946}
   uiBuildOverlay: {fileID: 3893762033554631689}
-  canvas: {fileID: 0}
-  uiNewElementOverlay: {fileID: 0}
-  exportControllerObject: {fileID: 0}
+  canvas: {fileID: 3893762035442248224}
+  uiNewElementOverlay: {fileID: 7247055078744351191, guid: f27f491651121894f9678dd8652f91ef,
+    type: 3}
+  exportControllerObject: {fileID: 5382632032375929373}
 --- !u!1 &3893762035442248227
 GameObject:
   m_ObjectHideFlags: 0

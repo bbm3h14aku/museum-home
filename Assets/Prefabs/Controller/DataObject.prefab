@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorScene: 2
   visitorScene: 1
+  spawnElement: {fileID: 2397350227769898044, guid: 16149fb2d9d85654095a004573008f0f,
+    type: 3}
   hallElement: {fileID: 1269091603699060431, guid: a88f0089f4805f1af864b565b5e757c3,
     type: 3}
   cornerElement: {fileID: 3059787308359434754, guid: 424c5d61465ff2ffcb842fa3d62fc034,

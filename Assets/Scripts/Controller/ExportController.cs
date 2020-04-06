@@ -28,7 +28,7 @@ public class ExportController : MonoBehaviour
         Debug.Log("analyse " + dataObject.worldElements.Length + " world elements");
 
         real_elements = 0;
-        for ( int i = 0; i < DataObjectController.MAX_WORLD_ELEMNTS; i++ )
+        for ( int i = 0; i < DataObjectController.MAX_WORLD_ELEMENTS; i++ )
         {
             if ( dataObject.worldElements[i] != null )
             {
@@ -40,7 +40,7 @@ public class ExportController : MonoBehaviour
 
         int le = 0;
         museum.elements = new API.ElementObject[real_elements];
-        for ( int i = 0; i < DataObjectController.MAX_WORLD_ELEMNTS; i++ )
+        for ( int i = 0; i < DataObjectController.MAX_WORLD_ELEMENTS; i++ )
         {
             if ( dataObject.worldElements[i] != null )
             {

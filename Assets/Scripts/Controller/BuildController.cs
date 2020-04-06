@@ -38,12 +38,17 @@ public class BuildController : MonoBehaviour
    
     private int lastId;
 
+    public static Vector3 VNull = new Vector3(0f, 0f, 0f);
+
     // uiTransformPanel
     void Awake()
     {
         /* Erst wird das Global Datenobject geladen, damit die Benötigtten Assets System weit zur Verfügung stehen */
         this.dataObject = GameObject.FindGameObjectsWithTag("DataObject")[0].GetComponent<DataObjectController>();
-        this.lastId = this.dataObject.lastIdx;
+        this.lastId = 0;
+
+        this.dataObject.worldElements[this.lastId] = Instantiate(this.dataObject.spawnElement, VNull, Quaternion.Euler(0f, 0f, 0f));
+        this.lastId++;
     }
 
     public void Preview()

@@ -56,7 +56,19 @@ public class AddElementPanelController : MonoBehaviour
                 this.xPos.text = this.dataObject.worldElements[this.index].transform.position.x.ToString();
             if ( !this.zChanged ) 
                 this.zPos.text = this.dataObject.worldElements[this.index].transform.position.z.ToString();
+            if (!this.rChanged)
+                this.ifRot.text = this.dataObject.worldElements[this.index].transform.rotation.eulerAngles.y.ToString();
         }
+    }
+
+    public void OnExponatCancle()
+    {
+
+    }
+
+    public void OnExponatSave()
+    {
+
     }
 
     public void ExponatOnChange(int idx)
@@ -66,6 +78,9 @@ public class AddElementPanelController : MonoBehaviour
 
         exponatOverlay.GetComponent<AddExponatController>().parentId = this.index;
         exponatOverlay.GetComponent<AddExponatController>().id = idx;
+        exponatOverlay.GetComponent<AddExponatController>().btnSave.onClick.AddListener(delegate { OnExponatSave(); });
+        exponatOverlay.GetComponent<AddExponatController>().btnCancle.onClick.AddListener(delegate { OnExponatCancle(); });
+        gameObject.SetActive(false);
     }
 
     public void Save()
@@ -73,7 +88,7 @@ public class AddElementPanelController : MonoBehaviour
         float x_pos = 0f;
         float z_pos = 0f;
 
-        float angle = 0f;
+        float y_angle = 0f;
 
         if ( this.textPrecheck(this.xPos.text) )
             x_pos = float.Parse(this.xPos.text);
@@ -81,10 +96,10 @@ public class AddElementPanelController : MonoBehaviour
             z_pos = float.Parse(this.zPos.text);
 
         if ( this.textPrecheck(this.ifRot.text) )
-            angle = float.Parse(this.ifRot.text);
+            y_angle = float.Parse(this.ifRot.text);
 
         Vector3 position = new Vector3(x_pos, 0f, z_pos);
-        Quaternion rotation = Quaternion.Euler(0f, angle, 0f);
+        Quaternion rotation = Quaternion.Euler(0f, y_angle, 0f);
         
         switch ( mode )
         {

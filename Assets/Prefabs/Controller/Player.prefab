@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0446ed5f19ec4428d9fa51c14efb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bewegungsgeschwindigkeitMaus: 100
 --- !u!82 &1531984089376740377
 AudioSource:
   m_ObjectHideFlags: 0
@@ -230,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c553987b61284c7beb159d9be4bbf605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk_speed: 30
+  walk_speed: 8
   UIMenu: {fileID: 4052668768174635748}
   lastValidPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &4046747211425558266
@@ -244,8 +245,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 2, z: 0.75}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 2.75, y: 5, z: 2.75}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!54 &8561952671453121357
 Rigidbody:
   m_ObjectHideFlags: 0
