@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Newtonsoft.Json;
 
 public class PlayerContronller : MonoBehaviour
 {
+    private class PlayerPosition
+    {
+        public int x { get; set; }
+        public int z { get; set; }
+
+        public int angle { get; set; }
+    }
     public float walk_speed;
     public Transform UIMenu;
     public Vector3 lastValidPosition;
@@ -46,11 +54,20 @@ public class PlayerContronller : MonoBehaviour
     {
         Vector3 pos = transform.position;
         int x = (int)pos.x;
-        int y = (int)pos.y;
         int z = (int)pos.z;
 
-        this.lastValidPosition = new Vector3((float)x, (float)y, (float)z);
-        Debug.Log("sending " + lastValidPosition.x + ", " + lastValidPosition.y + ", " + lastValidPosition.z + " to server");
+        PlayerPosition position = new PlayerPosition();
+        position.x = x;
+        position.z = z;
+
+        position.angle = 0;
+
+
+        //Debug.Log("sending " + lastValidPosition.x + ", " + lastValidPosition.y + ", " + lastValidPosition.z + " to server");
+        string json = JsonConvert.SerializeObject(position);
+        APIClient client = new APIClient("http://localhost/api/player.php");
+        client.SetKey("sd");
+        client.Post(json);
     }
 
     // Update is called once per frame
