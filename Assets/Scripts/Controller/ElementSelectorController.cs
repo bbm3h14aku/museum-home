@@ -24,6 +24,7 @@ public class ElementSelectorController : MonoBehaviour
     {
         Debug.Log("click triggerd: " + index);
         GameObject overlay = Instantiate(this.overlay);
+        overlay.GetComponent<AddElementPanelController>().index = index;
         overlay.GetComponent<AddElementPanelController>().SetEditMode();
         overlay.GetComponent<AddElementPanelController>().newElement = DataObjectController.GetInstance().worldElements[this.index];
     }

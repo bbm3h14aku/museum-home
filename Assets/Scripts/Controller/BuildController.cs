@@ -49,7 +49,6 @@ public class BuildController : MonoBehaviour
     public void Preview()
     {
         this.editCamera.gameObject.SetActive(false);
-        // this.createBuilding();
         Instantiate(this.dataObject.serviceElement);
         this.uiBuildOverlay.gameObject.SetActive(false);
         Debug.Log("adding new Element to scene");
@@ -85,20 +84,6 @@ public class BuildController : MonoBehaviour
         }
         GameObject obj = Instantiate(this.uiNewElementOverlay);
         obj.GetComponent<AddElementPanelController>().newElement = newElementObject;
-        this.createElementSelector();
-        /*
-        GameObject tmp = (GameObject) Instantiate(newElementObject, newElementPosition, newElementRotation);
-
-        tmp.AddComponent<ElementController>();
-        tmp.GetComponent<ElementController>().id = this.lastId;
-        tmp.GetComponent<ElementController>().editable = true;
-
-        this.createElementSelector();
-
-        GameObject.FindGameObjectsWithTag("DataObject")[0].GetComponent<DataObjectController>().worldElements[this.lastId] = tmp;
-        Debug.Log("Adding Element " + this.lastId + " to global list");
-        this.lastId++;
-        */
     }
 
     public void CloseAddElementPanel()
@@ -106,15 +91,4 @@ public class BuildController : MonoBehaviour
         this.uiNewElementOverlay.GetComponent<AddElementPanelController>().newElement = null;
         this.uiNewElementOverlay.SetActive(false);
     }
-
-    private void createElementSelector()
-    {
-        GameObject btn = (GameObject)Instantiate(this.dataObject.uiElementSelector, this.contentList.transform.position, this.contentList.transform.rotation);
-        btn.transform.SetParent(this.contentList.transform);
-        btn.GetComponent<ElementSelectorController>().index = this.lastId;
-        btn.transform.GetChild(0).GetComponent<Text>().text = "Object " + this.lastId;
-        btn.gameObject.SetActive(true);
-        btn.GetComponent<ElementSelectorController>().enabled = true;
-    }
-   
 }

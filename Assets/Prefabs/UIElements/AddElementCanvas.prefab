@@ -558,7 +558,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5375946981317821391}
-        m_MethodName: AddElement
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2606,6 +2606,7 @@ MonoBehaviour:
   yRot: {fileID: 9021073331810028438}
   zRot: {fileID: 6820577439367784088}
   label: {fileID: 2200924207296102627}
+  index: 0
   newElement: {fileID: 0}
   mode: 0
 --- !u!1 &7300771102872673148

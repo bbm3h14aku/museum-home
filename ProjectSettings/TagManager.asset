@@ -9,6 +9,7 @@ TagManager:
   - Image
   - Text
   - BuildableElement
+  - WorldObjectList
   layers:
   - Default
   - TransparentFX

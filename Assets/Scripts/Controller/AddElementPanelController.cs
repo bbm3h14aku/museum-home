@@ -22,6 +22,16 @@ public class AddElementPanelController : MonoBehaviour
 
     public const int MODE_NEW_ELEMENT = 0;
     public const int MODE_EDIT_ELEMENT = 1;
+    
+
+    private DataObjectController dataObject;
+    private GameObject contentList;
+
+    void Awake()
+    {
+        this.dataObject = DataObjectController.GetInstance();
+        this.contentList = GameObject.FindGameObjectsWithTag("WorldObjectList")[0];
+    }
 
     public void Save()
     {
@@ -74,15 +84,28 @@ public class AddElementPanelController : MonoBehaviour
 
         DataObjectController dataObj = DataObjectController.GetInstance();
         dataObj.worldElements[dataObj.lastIdx] = obj;
+        this.index = dataObj.lastIdx;
+        this.createElementSelector();
         dataObj.lastIdx++;
 
         this.Close();
     }
 
+    private void createElementSelector()
+    {
+        GameObject btn = (GameObject) Instantiate(this.dataObject.uiElementSelector, this.contentList.transform.position, this.contentList.transform.rotation);
+        btn.transform.SetParent(this.contentList.transform);
+        btn.GetComponent<ElementSelectorController>().index = this.index;
+        btn.transform.GetChild(0).GetComponent<Text>().text = "Object " + this.index;
+        btn.gameObject.SetActive(true);
+        btn.GetComponent<ElementSelectorController>().enabled = true;
+    }
+
+
     public void SetEditMode()
     {
         this.mode = 1;
-        this.label.text = this.index.ToString() + " Element bearbeiten";
+        this.label.text = "Element " + this.index.ToString() + " bearbeiten";
     }
 
     private bool textPrecheck(string str)
