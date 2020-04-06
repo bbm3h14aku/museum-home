@@ -216,12 +216,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DataObject
       objectReference: {fileID: 0}
-    - target: {fileID: 184850017202211503, guid: b1bf751583f81f2d6aa48dd9402396e4,
-        type: 3}
-      propertyPath: uiTransformPanel
-      value: 
-      objectReference: {fileID: 7247055078744351191, guid: f27f491651121894f9678dd8652f91ef,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1bf751583f81f2d6aa48dd9402396e4, type: 3}
 --- !u!1001 &3893762034438908354
@@ -1132,72 +1126,3 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3893762034438908354}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6751388187915256569
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 100.559494
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 292.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829491183266890810, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455670107089251017, guid: d69f17efdefe95647a334f57979b67d1,
-        type: 3}
-      propertyPath: m_Name
-      value: AddExponatCanvas
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d69f17efdefe95647a334f57979b67d1, type: 3}

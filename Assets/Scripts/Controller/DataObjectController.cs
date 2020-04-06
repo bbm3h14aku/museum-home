@@ -14,6 +14,7 @@ public class DataObjectController : MonoBehaviour
     public GameObject exponatLoader;
 
     public GameObject uiTransformPanel;
+    public GameObject uiExponatPanel;
     public GameObject uiElementSelector;
 
     public GameObject serviceElement;

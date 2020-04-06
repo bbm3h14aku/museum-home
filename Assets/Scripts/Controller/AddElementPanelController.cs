@@ -6,12 +6,9 @@ using UnityEngine.UI;
 public class AddElementPanelController : MonoBehaviour
 {
     public InputField xPos;
-    public InputField yPos;
     public InputField zPos;
 
-    public InputField xRot;
-    public InputField yRot;
-    public InputField zRot;
+    public InputField ifRot;
 
     public Text label;
 
@@ -22,10 +19,13 @@ public class AddElementPanelController : MonoBehaviour
 
     public const int MODE_NEW_ELEMENT = 0;
     public const int MODE_EDIT_ELEMENT = 1;
-    
 
     private DataObjectController dataObject;
     private GameObject contentList;
+
+    bool xChanged;
+    bool zChanged;
+    bool rChanged;
 
     void Awake()
     {
@@ -33,33 +33,58 @@ public class AddElementPanelController : MonoBehaviour
         this.contentList = GameObject.FindGameObjectsWithTag("WorldObjectList")[0];
     }
 
+    public void xPosChanged()
+    {
+        this.xChanged = true;
+    }
+
+    public void zPosChanged()
+    {
+        this.zChanged = true;
+    }
+
+    public void rotChanged()
+    {
+        this.rChanged = true;
+    }
+
+    void Update()
+    {
+        if ( this.index >= 0 && this.dataObject.worldElements[this.index] != null && this.mode == AddElementPanelController.MODE_EDIT_ELEMENT )
+        {
+            if ( !this.xChanged )
+                this.xPos.text = this.dataObject.worldElements[this.index].transform.position.x.ToString();
+            if ( !this.zChanged ) 
+                this.zPos.text = this.dataObject.worldElements[this.index].transform.position.z.ToString();
+        }
+    }
+
+    public void ExponatOnChange(int idx)
+    {
+        Debug.Log("changing exponat position: " + idx);
+        GameObject exponatOverlay = Instantiate(this.dataObject.uiExponatPanel);
+
+        exponatOverlay.GetComponent<AddExponatController>().parentId = this.index;
+        exponatOverlay.GetComponent<AddExponatController>().id = idx;
+    }
+
     public void Save()
     {
         float x_pos = 0f;
-        float y_pos = 0f;
         float z_pos = 0f;
 
-        float x_rot = 0f;
-        float y_rot = 0f;
-        float z_rot = 0f;
+        float angle = 0f;
 
         if ( this.textPrecheck(this.xPos.text) )
             x_pos = float.Parse(this.xPos.text);
-        if ( this.textPrecheck(this.yPos.text) )
-            y_pos = float.Parse(this.yPos.text);
         if ( this.textPrecheck(this.zPos.text) )
             z_pos = float.Parse(this.zPos.text);
 
-        if ( this.textPrecheck(this.xRot.text) )
-            z_rot = float.Parse(this.zRot.text);
-        if ( this.textPrecheck(this.xRot.text) )
-            x_rot = float.Parse(this.xRot.text);
-        if ( this.textPrecheck(this.yRot.text) )
-            y_rot = float.Parse(this.yRot.text);
+        if ( this.textPrecheck(this.ifRot.text) )
+            angle = float.Parse(this.ifRot.text);
 
-
-        Vector3 position = new Vector3(x_pos, y_pos, z_pos);
-        Quaternion rotation = Quaternion.Euler(x_rot, y_rot, z_rot);
+        Vector3 position = new Vector3(x_pos, 0f, z_pos);
+        Quaternion rotation = Quaternion.Euler(0f, angle, 0f);
         
         switch ( mode )
         {

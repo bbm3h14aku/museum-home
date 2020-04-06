@@ -55,6 +55,8 @@ MonoBehaviour:
     type: 3}
   uiTransformPanel: {fileID: 7247055078744351191, guid: f27f491651121894f9678dd8652f91ef,
     type: 3}
+  uiExponatPanel: {fileID: 8455670107089251017, guid: d69f17efdefe95647a334f57979b67d1,
+    type: 3}
   uiElementSelector: {fileID: 5345617556424377443, guid: 838b142c312133c4b83703511f8aebc6,
     type: 3}
   serviceElement: {fileID: 4558408792965964773, guid: adfb0e58e53258645a17629f311d2c0f,
