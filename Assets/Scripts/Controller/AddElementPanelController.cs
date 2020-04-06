@@ -63,12 +63,12 @@ public class AddElementPanelController : MonoBehaviour
 
     public void OnExponatCancle()
     {
-
+        Debug.Log("cancle element");
     }
 
     public void OnExponatSave()
     {
-
+        Debug.Log("saving element");
     }
 
     public void ExponatOnChange(int idx)
