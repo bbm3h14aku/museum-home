@@ -32,6 +32,7 @@ public class BuildController : MonoBehaviour
     public Transform canvas;
 
     public GameObject uiNewElementOverlay;
+    public GameObject exportControllerObject;
 
     public APIClient client;
    
@@ -56,23 +57,35 @@ public class BuildController : MonoBehaviour
 
     public void AddDoorElement()
     {
-        this.AddElement(this.dataObject.doorElement, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
+        this.AddElement(this.dataObject.doorElement);
     }
 
     public void AddCornerElement()
     {
-        this.AddElement(this.dataObject.cornerElement, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
+        this.AddElement(this.dataObject.cornerElement);
     }
 
     public void AddHallElement()
     {
-        this.AddElement(this.dataObject.hallElement, new Vector3(0, 0, 0), Quaternion.Euler(0,0,0));
+        this.AddElement(this.dataObject.hallElement);
     }
 
-    public void AddElement(GameObject newElementObject, Vector3 newElementPosition, Quaternion newElementRotation)
+    public void AddElement(GameObject newElementObject)
     {
-        this.uiNewElementOverlay.GetComponent<AddElementPanelController>().newElement = newElementObject;
-        this.uiNewElementOverlay.SetActive(true);
+        if ( newElementObject == null )
+        {
+            Debug.LogError("missing gameobject to instantiate");
+            return;
+        }
+
+        if ( this.uiNewElementOverlay == null )
+        {
+            Debug.LogError("missing new element overlay");
+            return;
+        }
+        GameObject obj = Instantiate(this.uiNewElementOverlay);
+        obj.GetComponent<AddElementPanelController>().newElement = newElementObject;
+        this.createElementSelector();
         /*
         GameObject tmp = (GameObject) Instantiate(newElementObject, newElementPosition, newElementRotation);
 
@@ -90,7 +103,8 @@ public class BuildController : MonoBehaviour
 
     public void CloseAddElementPanel()
     {
-
+        this.uiNewElementOverlay.GetComponent<AddElementPanelController>().newElement = null;
+        this.uiNewElementOverlay.SetActive(false);
     }
 
     private void createElementSelector()

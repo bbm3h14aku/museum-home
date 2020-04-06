@@ -1,7 +1,10 @@
 sceneSetups:
-- path: Assets/Scenes/Config_Final_SceneV0.scene.unity
-  isLoaded: 1
-  isActive: 1
+- path: Assets/Scenes/Visitor_Final_SceneV0.scene.unity
+  isLoaded: 0
+  isActive: 0
 - path: Assets/Scenes/Menu_Final_SceneV0.scene.unity
   isLoaded: 0
   isActive: 0
+- path: Assets/Scenes/Config_Final_SceneV0.scene.unity
+  isLoaded: 1
+  isActive: 1

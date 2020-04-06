@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerContronller : MonoBehaviour
 {
-    public float walk_speed = 8f;
+    public float walk_speed;
     public Transform UIMenu;
     public Vector3 lastValidPosition;
 
@@ -27,7 +27,7 @@ public class PlayerContronller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<Collider>();
 
-        rb.MovePosition(new Vector3(0f, 0.01f, 0f));
+        rb.MovePosition(new Vector3(0f, 1f, 0f));
         transform.position = new Vector3(0, 0, 0);
     }
 
@@ -73,7 +73,7 @@ public class PlayerContronller : MonoBehaviour
        
         if ( collider.gameObject.tag == "Door" )
         {
-            print("loading next level");
+            //print("loading next level");
             //GameManager.instance.increaseLevel();
         }
 
@@ -82,11 +82,8 @@ public class PlayerContronller : MonoBehaviour
     //the camera rotates not the player itself
     void RotationHandler()
     {
-
         //prevert topple
         transform.eulerAngles = new Vector3(0, 0, 0);
-
-
     }
 
     void WalkHandler()

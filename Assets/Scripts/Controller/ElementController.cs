@@ -5,6 +5,7 @@ using UnityEngine;
 public class ElementController : MonoBehaviour
 {
     public int id;
+    public string type;
     public bool editable;
 
     public float xPos;
@@ -16,6 +17,20 @@ public class ElementController : MonoBehaviour
     public float z_angle;
 
     public List<ElementController> childs;
+
+    public API.ElementObject GetElementObject()
+    {
+        API.ElementObject obj = new API.ElementObject();
+        obj.type = this.type;
+        obj.pos_x = this.xPos;
+        obj.pos_y = this.yPos;
+        obj.pos_z = this.zPos;
+        obj.rot_x = this.x_angle;
+        obj.rot_y = this.y_angle;
+        obj.rot_z = this.z_angle;
+
+        return obj;
+    }
 
     public void moveOnZ(float zPos)
     {

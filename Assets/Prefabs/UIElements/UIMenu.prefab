@@ -134,6 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965458741035666674}
+  - component: {fileID: 8895543639502671150}
   m_Layer: 0
   m_Name: UIMenu
   m_TagString: Untagged
@@ -157,6 +158,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8895543639502671150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965458741035666673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: febe465defdd63647ba31671821d358d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &965458741073254237
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &965458741104286105
 RectTransform:
   m_ObjectHideFlags: 0
@@ -874,8 +887,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 300e8888c77187221b9c6774babb2cd6, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 184850017202211503, guid: b1bf751583f81f2d6aa48dd9402396e4,
+          type: 3}
+        m_MethodName: loadVisitor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

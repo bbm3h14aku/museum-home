@@ -29,6 +29,7 @@ public class DataObjectController : MonoBehaviour
 
     void Awake()
     {
+        this.worldElements = new GameObject[DataObjectController.MAX_WORLD_ELEMNTS];
         DontDestroyOnLoad(gameObject);
     }
 
