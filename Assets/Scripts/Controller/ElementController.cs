@@ -71,6 +71,10 @@ public class ElementController : MonoBehaviour
         this.xPos = this.gameObject.transform.position.x;
         this.yPos = this.gameObject.transform.position.y;
         this.zPos = this.gameObject.transform.position.z;
+
+        this.x_angle = this.gameObject.transform.rotation.eulerAngles.x;
+        this.y_angle = this.gameObject.transform.rotation.eulerAngles.y;
+        this.z_angle = this.gameObject.transform.rotation.eulerAngles.z;
     }
 
     private void move()

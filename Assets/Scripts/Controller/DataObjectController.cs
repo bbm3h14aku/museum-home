@@ -56,6 +56,12 @@ public class DataObjectController : MonoBehaviour
     void Awake()
     {
         this.worldElements = new GameObject[DataObjectController.MAX_WORLD_ELEMENTS];
+
+        PlayerPrefs.SetString("key", "sd");
+        PlayerPrefs.SetInt("playerId", 0);
+        PlayerPrefs.SetInt("validPlayer", 0);
+        PlayerPrefs.Save();
+
         DontDestroyOnLoad(gameObject);
     }
 

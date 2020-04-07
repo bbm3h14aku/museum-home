@@ -11,13 +11,6 @@ public class VisitorController : MonoBehaviour
 {
     public int museumId;
 
-    /* Building Objects */
-    /*
-    public GameObject hallElement;
-    public GameObject cornerElement;
-    public GameObject entryElement;
-    */
-
     /* Exponat Objects */
     public GameObject exponatElement;
     /* Service Objects */
@@ -81,7 +74,11 @@ public class VisitorController : MonoBehaviour
             if (instance != null)
             {
                 m.elements[i].gameObject = Instantiate(instance, p, q);
-
+                for ( int j = 0; j < m.elements[i].gameObject.GetComponent<ElementController>().Childs.Length; j++ )
+                {
+                    m.elements[i].gameObject.GetComponent<ElementController>().Childs[j].GetComponent<ExponatLoader>().enabled = true;
+                    Debug.Log("enabling " + (j + 1) + " of " + m.elements[i].gameObject.GetComponent<ElementController>().Childs.Length);
+                } 
                 this.createExponats(m.elements[i].exponatListId);
             }
         }
