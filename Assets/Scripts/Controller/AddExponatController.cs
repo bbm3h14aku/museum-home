@@ -24,9 +24,9 @@ public class AddExponatController : MonoBehaviour
         if (parentId >= 0)
         {
             GameObject _object = Instantiate(dataObject.exponatLoader);
-            _object.GetComponent<ExponatLoader>().description = txtDescription.text;
-            _object.GetComponent<ExponatLoader>().label = txtLabel.text;
-            _object.GetComponent<ExponatLoader>().imageurl = txtUrl.text;
+            _object.GetComponent<ExponatLoader>().exponatData.description = txtDescription.text;
+            _object.GetComponent<ExponatLoader>().exponatData.label = txtLabel.text;
+            _object.GetComponent<ExponatLoader>().exponatData.imageurl = txtUrl.text;
         }
         
         this.Close();

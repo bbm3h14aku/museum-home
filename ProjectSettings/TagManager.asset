@@ -10,6 +10,7 @@ TagManager:
   - Text
   - BuildableElement
   - WorldObjectList
+  - ObjectPresentation
   layers:
   - Default
   - TransparentFX

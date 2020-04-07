@@ -20,6 +20,8 @@ public class DataObjectController : MonoBehaviour
 
     public GameObject serviceElement;
 
+    public GameObject assetLoader;
+
     public int lastIdx;
     public GameObject[] worldElements;
     public const int MAX_WORLD_ELEMENTS = 8;

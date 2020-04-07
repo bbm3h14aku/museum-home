@@ -63,5 +63,7 @@ MonoBehaviour:
     type: 3}
   serviceElement: {fileID: 4558408792965964773, guid: adfb0e58e53258645a17629f311d2c0f,
     type: 3}
+  assetLoader: {fileID: 5158248640131762185, guid: 12e66b4f6e5e9474692e390ba467ece9,
+    type: 3}
   lastIdx: 0
   worldElements: []

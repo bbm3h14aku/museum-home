@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8896494797254806002}
   m_Layer: 0
   m_Name: Exponat
-  m_TagString: Untagged
+  m_TagString: ObjectPresentation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hiddenChild: {fileID: 0}
   trigger: {fileID: 3599968684994946006}
+  labelTxt: {fileID: 6808510283732759603}
   label: 
   id: 0
 --- !u!1 &8830685225624031263
@@ -60,7 +61,7 @@ GameObject:
   - component: {fileID: 7384614301572121580}
   - component: {fileID: 6808510283732759603}
   m_Layer: 0
-  m_Name: New Text
+  m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,21 +216,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895742014129245441, guid: 7c8d4152d08ede27f9383c903497a425,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895742014129245441, guid: 7c8d4152d08ede27f9383c903497a425,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895742014129245441, guid: 7c8d4152d08ede27f9383c903497a425,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9078094172502072010, guid: 7c8d4152d08ede27f9383c903497a425,
         type: 3}
