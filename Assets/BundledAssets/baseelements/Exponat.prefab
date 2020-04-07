@@ -47,6 +47,8 @@ MonoBehaviour:
   hiddenChild: {fileID: 0}
   trigger: {fileID: 3599968684994946006}
   labelTxt: {fileID: 6808510283732759603}
+  renderer: {fileID: 7562314493025176530}
+  material: {fileID: 2100000, guid: 7ebc479709209744b9bd1232b9bf7637, type: 2}
   label: 
   id: 0
 --- !u!1 &8830685225624031263
@@ -233,6 +235,12 @@ Transform:
 --- !u!1 &3599968684994946006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4255259130190995315, guid: 7c8d4152d08ede27f9383c903497a425,
+    type: 3}
+  m_PrefabInstance: {fileID: 790416713855466661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7562314493025176530 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7064638352601855863, guid: 7c8d4152d08ede27f9383c903497a425,
     type: 3}
   m_PrefabInstance: {fileID: 790416713855466661}
   m_PrefabAsset: {fileID: 0}
